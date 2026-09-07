@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="LamaSound.MainWindow"
+        Title="LamaSound">
+    
+    <Grid>
+        <Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *" Name="GridLibs">
+            <!-- Prima riga -->
+            <!--<Button Grid.Row="0" Grid.Column="0" Content="Pulsante 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
+        </Grid>
+        <Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *" Name="GridRiproduzzione" IsVisible="False">
+            <!--<TextBlock Text="Lib" Grid.Row="0" Grid.Column="0" Grid.ColumnSnap="2" FontSize="16" FontWeight="Bold" Foreground="Blue">-->
+            <TextBlock Text="Lib" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Name="NomeLibreria"/>        
+
+            <Button Grid.Row="1" Grid.Column="0" Content="Indietro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="Indietro"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="Riproduci" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="RiproduzioneNormale"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Content="Random" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="RiproduzioneRandom"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="Selezzione" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Click="RiproduzioneScelta"/>
+        </Grid>
+
+        <Grid ColumnDefinitions="*" RowDefinitions="*, *, *, *  " Name="GridAscolto" IsVisible="False">
+            <Button Grid.Row="0" Grid.Column="0" Content="Indietro" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20" Click="Indietro"/>
+            <TextBlock Text="Nome" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Name="NomeSong"/>            
+            <Grid ColumnDefinitions="*,*,*,*,*,*,*" RowDefinitions="*" Grid.Row="3" Grid.Column="0">
+                <Button Grid.Row="0" Grid.Column="1" Content="" Name="Precedente" Click="PassaPrecedente"/>
+                <Button Grid.Row="0" Grid.Column="3" Content="" Name="Pausa" Click="PausaORipresa"/>
+                <Button Grid.Row="0" Grid.Column="5" Content="" Name="Successivo" Click="PassaSuccessivo"/>
+            </Grid>
+
+        </Grid>
+
+        <StackPanel Orientation="Vertical" Spacing="10" Name="SezzioneSelezione" IsVisible="False">
+            <Button Content="Avanti" Click="SelezioneSongsClick"/>
+            <ListBox SelectionMode="Multiple" Name="Opzioni">
+
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>
